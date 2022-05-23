@@ -4,13 +4,13 @@ pyDAMPF: a Python package for modeling mechanical properties of hygroscopic mate
 |CI Status| |Coverage Status| |Documentation Status|
 
 
-[//]: # .. |CI Status| image:: https://github.com/pypr/compyle/actions/workflows/tests.yml/badge.svg
-[//]: #    :target: https://github.com/pypr/compyle/actions/workflows/tests.yml
-[//]: # .. |Documentation Status| image:: https://readthedocs.org/projects/compyle/badge/?version=latest
-[//]: #    :target: https://compyle.readthedocs.io/en/latest/?badge=latest
-[//]: #    :alt: Documentation Status
-[//]: # .. |Coverage Status| image:: https://codecov.io/gh/pypr/compyle/branch/master/graph/badge.svg
-[//]: #    :target: https://codecov.io/gh/pypr/compyle
+/*: .. |CI Status| image:: https://github.com/pypr/compyle/actions/workflows/tests.yml/badge.svg
+/*:    :target: https://github.com/pypr/compyle/actions/workflows/tests.yml
+/*: .. |Documentation Status| image:: https://readthedocs.org/projects/compyle/badge/?version=latest
+/*:    :target: https://compyle.readthedocs.io/en/latest/?badge=latest
+/*:    :alt: Documentation Status
+/*: .. |Coverage Status| image:: https://codecov.io/gh/pypr/compyle/branch/master/graph/badge.svg
+/*:  :target: https://codecov.io/gh/pypr/compyle
 
 pyDAMPF is a tool oriented to the Atomic Force Microscopy (AFM) community, which allows the simulation of the physical properties of materials under variable relative humidity (RH).
 
