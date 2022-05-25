@@ -124,7 +124,6 @@ def inputs_processor (variables,data):
     directory = os.getcwd()
     shutil.copy(directory+'/tempall.txt' , directory+'/EXECUTE_pyDAMPF/')
     shutil.copy(directory+'/tempall.txt' , directory+'/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/')
-    shutil.copy(directory+'/tempall.txt' , directory+'/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa/')
 
 if __name__ == '__main__':
     inputs_processor(list_var,data) 
