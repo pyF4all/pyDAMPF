@@ -53,8 +53,6 @@ def cluster (factor);
 		     ssf.write('#!/bin/bash -l\n')
 		     ssf.write('#SBATCH --time=23:00:00\n')
 		     ssf.write('#SBATCH --constraint=epyc3\n')
-		     ssf.write('#SBATCH --output=tjobpyDAMPFthread'+str(i)+'-%j.out\n')
-		     ssf.write('#SBATCH --error=tjobdpyDAMPFthread'+str(i)+'-%j.err\n')
 		     ssf.write('#\n')
 		     ssf.write('\n')
 		     ssf.write('ml Anaconda3/2019.10\n')
