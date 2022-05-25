@@ -97,7 +97,7 @@ def change_dir():
         os.makedirs("PARALLELBASIC_0")
         
  #################creacion de carpetas, copia de contenido y cambio paralelize#######
-def parallel_method(tcases, factor,tempall):
+def parallel_method(tcases, factor, tempall):
     lst = gen_limites(tcases, factor)
     change_dir()
     for i in range (1,factor+1):
@@ -110,24 +110,12 @@ def parallel_method(tcases, factor,tempall):
         factornuevo='factor='+str(factor)
         rangoantiguo='(0,paraleliz)'
         rangonuevo='('+str(lim_inferior)+","+str(lim_superior)+')'
-        casoantiguo= 'tcases =11'
-        casonuevo= 'tcases ='+(str(lim_superior-lim_inferior))
-        map0antiguo='[0:tcases]'
-        map0nuevo='['+str(lim_inferior)+":"+str(lim_superior)+']'
-        rangoposantiguo='(0,tcases)'
         os.chdir(direc+'/PARALLELBASIC_0/'+str(i))
         pyname='nrun/generate_cases.py'
-        posname='nrun/runa/pmPos.py'
         newpath=direc+'/PARALLELBASIC_0/'+str(i)+'/'+pyname
         reemplazo(newpath, factorantiguo, factornuevo)
         reemplazo(newpath, rangoantiguo, rangonuevo)
-        os.chdir(direc)
-        newpathpos=direc+'/PARALLELBASIC_0/'+str(i)+'/'+posname
-        reemplazo(newpathpos, casoantiguo, casonuevo)
-        reemplazo(newpathpos, map0antiguo, map0nuevo)
-        reemplazo(newpathpos, rangoposantiguo, rangonuevo)
-        os.chdir(direc)
-    print(str(factor)+'PARALLEL CASE FOLDERS HAVE BEEN CREATED')
+        os.chdir(direc) 
     
 if __name__ == '__main__':
     parallel_method(tcases, factor,tempall)
