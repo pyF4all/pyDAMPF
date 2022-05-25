@@ -107,20 +107,25 @@ if eps == [0]:
 if eps0 == [0]:
     eps0 = [1]
         
-def inputs_processor (nper,npp,nperfin,zcmin,dzc,fixzc,a0,Es,q,ham,eta,epsilon2,epsilon1,eps,eps0,sigmat,sigmas,debye,ljmin,lenght,RH,data):
+list_var = [nper,npp,nperfin,zcmin,dzc,fixzc,a0,Es,q,ham,eta,epsilon2,epsilon1,eps,eps0,sigmat,sigmas,debye,ljmin,lenght,RH]
+#####if we want to save the variables and then read them######
+#var= 'variables.txt'    
+#np.savetxt(var,list_var)
+#values = np.genfromtxt('variables.txt')
+#lst_var=[]
+#for i in values:
+#    lst_var.append[i]
+    
+def inputs_processor (variables,data):
     a, b = np.shape(data)
-    #list
-    big_lst = [nper,npp,nperfin,zcmin,dzc,fixzc,a0,Es,q,ham,eta,epsilon2,epsilon1,eps,eps0,sigmat,sigmas,debye,ljmin,lenght,RH]
-    final = gran_permutador(big_lst, data)
-    #### SAVE DATA ####
+    final = gran_permutador(variables, data)
     f_name = "tempall.txt"
     np.savetxt(f_name, final)
-    print('THE FILE HAS BEEN CREATED WITH ALL THE DATA AND VARIABLES!')
     directory = os.getcwd()
     shutil.copy(directory+'/tempall.txt' , directory+'/EXECUTE_pyDAMPF/')
     shutil.copy(directory+'/tempall.txt' , directory+'/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/')
     shutil.copy(directory+'/tempall.txt' , directory+'/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa/')
-    
+
 if __name__ == '__main__':
-    inputs_processor()
+    inputs_processor(list_var,data) 
     
