@@ -1,16 +1,6 @@
 pyDAMPF: a Python package for modeling mechanical properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
 
-|CI Status| |Coverage Status| |Documentation Status|
-
-[//]: # ( .. |CI Status| image:: https://github.com/pypr/compyle/actions/workflows/tests.yml/badge.svg)
-[//]: # (    :target: https://github.com/pypr/compyle/actions/workflows/tests.yml)
-[//]: # ( .. |Documentation Status| image:: https://readthedocs.org/projects/compyle/badge/?version=latest)
-[//]: # (  :target: https://compyle.readthedocs.io/en/latest/?badge=latest)
-[//]: # ( :alt: Documentation Status)
-[//]: # ( .. |Coverage Status| image:: https://codecov.io/gh/pypr/compyle/branch/master/graph/badge.svg)
-[//]: # ( :target: https://codecov.io/gh/pypr/compyle)
-
 pyDAMPF is a tool oriented to the Atomic Force Microscopy (AFM) community, which allows the simulation of the physical properties of materials under variable relative humidity (RH).
 
 The computing engine is written in Fortran in order to reuse physics code and wrapped to Python to interoperate with high-level packages. We also introduce an in-house multi-thread approach of the pyDAMPF code, which compares for various computing architectures (PC, Google Colab and a HPC facility) very favorable in comparison to a former AFM simulator. 
@@ -22,90 +12,117 @@ Users can use the existing cantilever database to perform their simulations or a
 - multi-thread (unix based computer)
 - multi-thread (SLURM based computer)
 
-core, or multiple CPU cores (via OpenMP_) or on a GPU. Compyle offers
-source-to-source transpilation, making it a very convenient tool for writing HPC
-libraries.
-
-Some simple yet powerful parallel utilities are provided which can allow you
-to solve a remarkably large number of interesting HPC problems. Compyle also
-features JIT transpilation making it easy to use.
-
 Documentation and learning material is also available in the form of:
 
-- Documentation at: https://compyle.readthedocs.io
 
 - An introduction to compyle in the context of writing a parallel molecular
   dynamics simulator is in our `SciPy 2020 paper
-  <http://conference.scipy.org/proceedings/scipy2020/compyle_pr_ab.html>`_.
-
-- `Compyle poster presentation <https://docs.google.com/presentation/d/1LS9XO5pQXz8G5d27RP5oWLFxUA-Fr5OvfVUGsgg86TQ/edit#slide=id.p>`_
+  <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
 
 - You may also try Compyle online for free on a `Google Colab notebook`_.
 
-While Compyle seems simple it is not a toy and is used heavily by the PySPH_
-project where Compyle has its origins.
-
-.. _PySPH: https://github.com/pypr/pysph
-.. _Google Colab notebook: https://colab.research.google.com/drive/1SGRiArYXV1LEkZtUeg9j0qQ21MDqQR2U?usp=sharing
+.. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
 
 
 Installation
 -------------
 
-Compyle is itself largely pure Python but depends on numpy_ and requires
-either Cython_ or PyOpenCL_ or PyCUDA_ along with the respective backends of a
-C/C++ compiler, OpenCL and CUDA. If you are only going to execute code on a
-CPU then all you need is Cython.
+Compyle is itself largely pure Python but depends on numpy_, matplotlib_, and plotly_
 
-You should be able to install Compyle by doing::
+You should be able to download pyDAMPF  by doing::
 
-  $ pip install compyle
+  $ git clone https://github.com/govarguz/pyDAMPF/
 
 
-.. _PyOpenCL: https://documen.tician.de/pyopencl/
-.. _OpenCL: https://www.khronos.org/opencl/
-.. _Cython: http://www.cython.org
 .. _numpy: http://www.numpy.org
-.. _OpenMP: http://openmp.org/
-.. _PyCUDA: https://documen.tician.de/pycuda/
-
-A simple example
-----------------
-
-Here is a very simple example::
-
-   from compyle.api import Elementwise, annotate, wrap, get_config
-   import numpy as np
-
-   @annotate
-   def axpb(i, x, y, a, b):
-       y[i] = a*sin(x[i]) + b
-
-   x = np.linspace(0, 1, 10000)
-   y = np.zeros_like(x)
-   a, b = 2.0, 3.0
-
-   backend = 'cython'
-   get_config().use_openmp = True
-   x, y = wrap(x, y, backend=backend)
-   e = Elementwise(axpb, backend=backend)
-   e(x, y, a, b)
-
-This will execute the elementwise operation in parallel using OpenMP with
-Cython. The code is auto-generated, compiled and called for you transparently.
-The first time this runs, it will take a bit of time to compile everything but
-the next time, this is cached and will run much faster.
-
-If you just change the ``backend = 'opencl'``, the same exact code will be
-executed using PyOpenCL_ and if you change the backend to ``'cuda'``, it will
-execute via CUDA without any other changes to your code. This is obviously a
-very trivial example, there are more complex examples available as well.
+.. _matplotlib: https://matplotlib.org
+.. _plotly: https://plotly.com
 
 
-Examples
+pyDAMPF has a numerical kernel in fortran so it is necessary to install the correct 
+version.
+
+  $ sudo apt-get update
+  
+  $ sudo apt-get install gfortran-7-multilib
+
+
+Compilation with f2py: This step is only required once,and depends on the computer 
+architecture, by using f2py with the file pyDAMPF.f90 within the folder
+EXECUTE_pyDAMPF, the code for this reads
+
+  $ f2py -c --fcompiler=gnu95 pyDAMPF.f90 -m mypyDAMPF
+  
+  $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
+  
+  $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
+
+Generate Cases
+-------------
+
+Once we have obtained the numerical code as Python modules we generate the 
+tempall.txt file which contains all the necessary parameters and variables for 
+the pyDAMPF execution.
+
+  $ python3 inputs_processor.py
+
+Execute pyDAMPF
+-------------
+
+We need to choose the execution mode which can be serial or parallel. 
+Whereby parallel refers within this first version of the code to multi-threading
+capabilities only.
+
+Serial method: Our in-house development creates an individual folder for 
+each simulation case,which can be executed in one thread.
+
+  $ python3 serial_method.py
+  
+Parallel method: 
+
+  This method comprises two parts:
+
+  First a function which takes care of the bookkeeping of 
+  cases and folders:
+
+    $ python3 parallel_method.py <number of threads>
+  
+  The second part of the parallel method will execute pyDAMPF, which contains
+  at the same time two scripts. One for executing pyDAMPF in a common UNIX 
+  based desktop or laptop. 
+
+    $ python3 job_parallel_computer.py <number of threads>
+
+  While the second is a python script which generated SLURM code to launch
+  jobs in HPC facilities
+
+    $ python3 job_parallel_cluster.py <number of threads>
+  
+Analysis
+-------------  
+  
+Once the pyDAMPF simulation is finished,  pyDAMPF has two ways of analyzing the data.
+
+The graphical analysis:
+
+  $ python3 Graphical_analysis.py
+
+The quantitative analysis:
+
+  $ python3 Quantitative_analysis.py
+  
+Alternatively we offer for both cases an interactive environment in jupyter notebook. 
+
+  $ pip install tabloo
+  
+  $ jupyter notebook Graphical_analysis.ipynb
+  
+  $ jupyter notebook Quantitative_analysis.ipynb
+  
+  
+
+Example
 ---------
 
-Some simple examples and benchmarks are available in the `examples
-<https://github.com/pypr/compyle/tree/master/examples>`_ directory.
+To relate to the use of pyDAMPF you can access `Google Colab notebook`_.
 
-You may also run these examples on the `Google Colab notebook`_
