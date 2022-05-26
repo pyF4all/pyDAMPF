@@ -47,7 +47,7 @@ from IPython.display import display
 tempall = np.genfromtxt(open('tempall.txt',"r"))
 model = pd.read_csv("cantileversdata_model.cvs")
 casos = np.array(len(tempall[:,0]))
-
+escenario = input ('Serial method (s) or Parallel method (p)  ')
 
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
