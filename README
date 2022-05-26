@@ -16,8 +16,8 @@ IN THE TERMINAL:
 cd EXECUTE_pyDAMPF/
 
 f2py -c --fcompiler=gnu95 pyDAMPF.f90 -m mypyDAMPF
-cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
-cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
+cp *.so ./pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
+cp *.so ./pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
 
 
 
