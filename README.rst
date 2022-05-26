@@ -1,16 +1,6 @@
 pyDAMPF: a Python package for modeling mechanical properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
 
-|CI Status| |Coverage Status| |Documentation Status|
-
-[//]: # ( .. |CI Status| image:: https://github.com/pypr/compyle/actions/workflows/tests.yml/badge.svg)
-[//]: # (    :target: https://github.com/pypr/compyle/actions/workflows/tests.yml)
-[//]: # ( .. |Documentation Status| image:: https://readthedocs.org/projects/compyle/badge/?version=latest)
-[//]: # (  :target: https://compyle.readthedocs.io/en/latest/?badge=latest)
-[//]: # ( :alt: Documentation Status)
-[//]: # ( .. |Coverage Status| image:: https://codecov.io/gh/pypr/compyle/branch/master/graph/badge.svg)
-[//]: # ( :target: https://codecov.io/gh/pypr/compyle)
-
 pyDAMPF is a tool oriented to the Atomic Force Microscopy (AFM) community, which allows the simulation of the physical properties of materials under variable relative humidity (RH).
 
 The computing engine is written in Fortran in order to reuse physics code and wrapped to Python to interoperate with high-level packages. We also introduce an in-house multi-thread approach of the pyDAMPF code, which compares for various computing architectures (PC, Google Colab and a HPC facility) very favorable in comparison to a former AFM simulator. 
@@ -22,17 +12,8 @@ Users can use the existing cantilever database to perform their simulations or a
 - multi-thread (unix based computer)
 - multi-thread (SLURM based computer)
 
-core, or multiple CPU cores (via OpenMP_) or on a GPU. Compyle offers
-source-to-source transpilation, making it a very convenient tool for writing HPC
-libraries.
-
-Some simple yet powerful parallel utilities are provided which can allow you
-to solve a remarkably large number of interesting HPC problems. Compyle also
-features JIT transpilation making it easy to use.
-
 Documentation and learning material is also available in the form of:
 
-- Documentation at: https://compyle.readthedocs.io
 
 - An introduction to compyle in the context of writing a parallel molecular
   dynamics simulator is in our `SciPy 2020 paper
@@ -42,32 +23,34 @@ Documentation and learning material is also available in the form of:
 
 - You may also try Compyle online for free on a `Google Colab notebook`_.
 
-While Compyle seems simple it is not a toy and is used heavily by the PySPH_
-project where Compyle has its origins.
-
-.. _PySPH: https://github.com/pypr/pysph
 .. _Google Colab notebook: https://colab.research.google.com/drive/1SGRiArYXV1LEkZtUeg9j0qQ21MDqQR2U?usp=sharing
 
 
 Installation
 -------------
 
-Compyle is itself largely pure Python but depends on numpy_ and requires
-either Cython_ or PyOpenCL_ or PyCUDA_ along with the respective backends of a
-C/C++ compiler, OpenCL and CUDA. If you are only going to execute code on a
-CPU then all you need is Cython.
+Compyle is itself largely pure Python but depends on numpy_.
 
-You should be able to install Compyle by doing::
+You should be able to download pyDAMPF  by doing::
 
-  $ pip install compyle
+  $ git clone https://github.com/govarguz/pyDAMPF/
 
 
-.. _PyOpenCL: https://documen.tician.de/pyopencl/
-.. _OpenCL: https://www.khronos.org/opencl/
-.. _Cython: http://www.cython.org
 .. _numpy: http://www.numpy.org
-.. _OpenMP: http://openmp.org/
-.. _PyCUDA: https://documen.tician.de/pycuda/
+
+pyDAMPF has a numerical kernel in fortran so it is necessary to install the correct 
+version.
+
+  $ sudo apt-get update
+  $ sudo apt-get install gfortran-7-multilib
+
+Compilation with f2py: This step is only required once,and depends on the computer 
+architecture, the code for this reads
+
+  $ f2py -c --fcompiler=gnu95 pyDAMPF.f90 -m mypyDAMPF
+  
+
+
 
 A simple example
 ----------------
