@@ -46,61 +46,53 @@ from IPython.display import display
 
 tempall = np.genfromtxt(open('tempall.txt',"r"))
 model = pd.read_csv("cantileversdata_model.cvs")
-model = model.drop([1, 2,3,4,6,7,8,10,12,13,14,15,16,17,19,20,21,23,25,26,27,28,29],axis=0)
-#casos = np.array(len(tempall[:,0]))
-casos = [0,5,9,11,18,22,24] 
-#tempall = 
+casos = np.array(len(tempall[:,0]))
+
+
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
         if name in filename:
             return os.path.join(dirpath, name)
 #dominio temporal
 
-#def cauntitative (tempall, model):
-direc = os.getcwd()
-direc = direc+'/PARALLELBASIC_0/'
-forcet=[];maxforcet=[];vdwt=[];hertzt=[];viscot=[];capt=[];ljt=[];dlvot=[]
-     
-for i in casos:
-    filepatht = findfile("tdom"+str(i+1)+".dfo", direc)
-    tdom = np.genfromtxt(open(str(filepatht),"r"))        
-    forcet.append(tdom[:,4])
-    maxforcet.append(tdom[:,5])
-    vdwt.append(tdom[:,6])
-    hertzt.append(tdom[:,7])
-    viscot.append(tdom[:,8])
-    capt.append(tdom [:,9]) 
-    ljt.append(tdom[:,10])
-    dlvot.append(tdom [:,11])    
+def cauntitative (tempall, model):
+
+    esc = escenario
+    direc = os.getcwd()
+    if esc=='p' or esc == 'P'or esc == '-P' or esc == '-p' :
+        direc = direc+'/PARALLELBASIC_0/'
+    elif esc == 's' or esc == 'S'or esc == '-s'or esc == '-S':
+        direc = direc+'/SERIALBASIC_0/'
+    else:
+        print('Select parallel mode (-p) or serial mode (-s) in the first argument' )
+        sys.exit()
+    forcet=[];maxforcet=[];vdwt=[];hertzt=[];viscot=[];capt=[];ljt=[];dlvot=[]
+         
+    for i in range(casos):
+        filepatht = findfile("tdom"+str(i+1)+".dfo", direc)
+        tdom = np.genfromtxt(open(str(filepatht),"r"))        
+        forcet.append(tdom[:,4])
+        maxforcet.append(tdom[:,5])
+        vdwt.append(tdom[:,6])
+        hertzt.append(tdom[:,7])
+        viscot.append(tdom[:,8])
+        capt.append(tdom [:,9]) 
+        ljt.append(tdom[:,10])
+        dlvot.append(tdom [:,11])    
+        
+    forcetM=[];vdwtM=[];hertztM=[];viscotM=[];captM=[];ljtM=[];dlvotM=[]
+    for j in range(casos):
+        forcetM.append([max(forcet[j])]) 
+        vdwtM.append([max(vdwt[j])]) 
+        hertztM.append([max(hertzt[j])]) 
+        viscotM.append([max(viscot[j])]) 
+        captM.append([max(capt[j])]) 
+        ljtM.append([max(ljt[j])]) 
+        dlvotM.append([max(dlvot[j])]) 
     
-forcetM=[];vdwtM=[];hertztM=[];viscotM=[];captM=[];ljtM=[];dlvotM=[]
-for j in range(len(casos)):
-    #print(max(forcet[j]))
-    forcetM.append([max(forcet[j])]) 
-    vdwtM.append([max(vdwt[j])]) 
-    hertztM.append([max(hertzt[j])]) 
-    viscotM.append([max(viscot[j])]) 
-    captM.append([max(capt[j])]) 
-    ljtM.append([max(ljt[j])]) 
-    dlvotM.append([max(dlvot[j])]) 
-
-
-i = (tempall[casos,0])
-l = (tempall[casos,1])
-w = (tempall[casos,2])
-t = (tempall[casos,3])
-f = (tempall[casos,4])
-r = (tempall[casos,5])
-k = (tempall[casos,6])
-v = (tempall[casos,8])
-a = (tempall[casos,15])
-rh = (tempall[casos,29])
-e = (tempall[casos,16])
-q = (tempall[casos,17])
-#df = model.assign(ID=tempall[casos,0] , LENGTH=tempall[casos,1], WIDTH=tempall[casos,2], THICKNESS=tempall[casos,3] , F0=tempall[casos,4] , R_tip=tempall[casos,5] , Kc=tempall[casos,6] , VOLUME=tempall[casos,8] , A0=tempall[casos,15] , RH=tempall[casos,29] , Es=tempall[casos,16], Q=tempall[casos,17], F_T_tT=forcetM , F_Hertz=hertztM , F_vdw=vdwtM , F_vis=viscotM , F_cap=captM , F_LJ=ljtM , F_DLVO=dlvotM )
-df = model.assign(ID=i, LENGTH=l, WIDTH=w, THICKNESS=t , F0=f, R_tip=r, Kc=k , VOLUME=v, A0=a, RH=rh, Es=e, Q=q, F_T_tT=forcetM , F_Hertz=hertztM , F_vdw=vdwtM , F_vis=viscotM , F_cap=captM , F_LJ=ljtM , F_DLVO=dlvotM )
-
-pd.set_option('display.max_columns', None) 
-print(df)
-#if __name__ == '__main__':
-#    cauntitative (tempall, model)
+    df = model.assign(ID=tempall[:,0] , LENGTH=tempall[:,1], WIDTH=tempall[:,2], THICKNESS=tempall[:,3] , F0=tempall[:,4] , R_tip=tempall[:,5] , Kc=tempall[:,6] , VOLUME=tempall[:,8] , A0=tempall[:,15] , RH=tempall[:,29] , Es=tempall[:,16], Q=tempall[:,17], F_T_tT=forcetM , F_Hertz=hertztM , F_vdw=vdwtM , F_vis=viscotM , F_cap=captM , F_LJ=ljtM , F_DLVO=dlvotM )
+    
+    pd.set_option('display.max_columns', None) 
+    print(df)
+if __name__ == '__main__':
+    cauntitative (tempall, model)
