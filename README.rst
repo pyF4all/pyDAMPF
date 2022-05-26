@@ -17,19 +17,17 @@ Documentation and learning material is also available in the form of:
 
 - An introduction to compyle in the context of writing a parallel molecular
   dynamics simulator is in our `SciPy 2020 paper
-  <http://conference.scipy.org/proceedings/scipy2020/compyle_pr_ab.html>`_.
-
-- `Compyle poster presentation <https://docs.google.com/presentation/d/1LS9XO5pQXz8G5d27RP5oWLFxUA-Fr5OvfVUGsgg86TQ/edit#slide=id.p>`_
+  <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
 
 - You may also try Compyle online for free on a `Google Colab notebook`_.
 
-.. _Google Colab notebook: https://colab.research.google.com/drive/1SGRiArYXV1LEkZtUeg9j0qQ21MDqQR2U?usp=sharing
+.. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
 
 
 Installation
 -------------
 
-Compyle is itself largely pure Python but depends on numpy_.
+Compyle is itself largely pure Python but depends on numpy_, matplotlib_, and plotly_
 
 You should be able to download pyDAMPF  by doing::
 
@@ -37,58 +35,94 @@ You should be able to download pyDAMPF  by doing::
 
 
 .. _numpy: http://www.numpy.org
+.. _matplotlib: https://matplotlib.org
+.. _plotly: https://plotly.com
+
 
 pyDAMPF has a numerical kernel in fortran so it is necessary to install the correct 
 version.
 
   $ sudo apt-get update
+  
   $ sudo apt-get install gfortran-7-multilib
 
+
 Compilation with f2py: This step is only required once,and depends on the computer 
-architecture, the code for this reads
+architecture, by using f2py with the file pyDAMPF.f90 within the folder
+EXECUTE_pyDAMPF, the code for this reads
 
   $ f2py -c --fcompiler=gnu95 pyDAMPF.f90 -m mypyDAMPF
   
+  $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
+  
+  $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
 
+Generate Cases
+-------------
 
+Once we have obtained the numerical code as Python modules we generate the 
+tempall.txt file which contains all the necessary parameters and variables for 
+the pyDAMPF execution.
 
-A simple example
-----------------
+  $ python3 inputs_processor.py
 
-Here is a very simple example::
+Execute pyDAMPF
+-------------
 
-   from compyle.api import Elementwise, annotate, wrap, get_config
-   import numpy as np
+We need to choose the execution mode which can be serial or parallel. 
+Whereby parallel refers within this first version of the code to multi-threading
+capabilities only.
 
-   @annotate
-   def axpb(i, x, y, a, b):
-       y[i] = a*sin(x[i]) + b
+Serial method: Our in-house development creates an individual folder for 
+each simulation case,which can be executed in one thread.
 
-   x = np.linspace(0, 1, 10000)
-   y = np.zeros_like(x)
-   a, b = 2.0, 3.0
+  $ python3 serial_method.py
+  
+Parallel method: 
 
-   backend = 'cython'
-   get_config().use_openmp = True
-   x, y = wrap(x, y, backend=backend)
-   e = Elementwise(axpb, backend=backend)
-   e(x, y, a, b)
+  This method comprises two parts:
 
-This will execute the elementwise operation in parallel using OpenMP with
-Cython. The code is auto-generated, compiled and called for you transparently.
-The first time this runs, it will take a bit of time to compile everything but
-the next time, this is cached and will run much faster.
+  First a function which takes care of the bookkeeping of 
+  cases and folders:
 
-If you just change the ``backend = 'opencl'``, the same exact code will be
-executed using PyOpenCL_ and if you change the backend to ``'cuda'``, it will
-execute via CUDA without any other changes to your code. This is obviously a
-very trivial example, there are more complex examples available as well.
+    $ python3 parallel_method.py <number of threads>
+  
+  The second part of the parallel method will execute pyDAMPF, which contains
+  at the same time two scripts. One for executing pyDAMPF in a common UNIX 
+  based desktop or laptop. 
 
+    $ python3 job_parallel_computer.py <number of threads>
 
-Examples
+  While the second is a python script which generated SLURM code to launch
+  jobs in HPC facilities
+
+    $ python3 job_parallel_cluster.py <number of threads>
+  
+Analysis
+-------------  
+  
+Once the pyDAMPF simulation is finished,  pyDAMPF has two ways of analyzing the data.
+
+The graphical analysis:
+
+  $ python3 Graphical_analysis.py
+
+The quantitative analysis:
+
+  $ python3 Quantitative_analysis.py
+  
+Alternatively we offer for both cases an interactive environment in jupyter notebook. 
+
+  $ pip install tabloo
+  
+  $ jupyter notebook Graphical_analysis.ipynb
+  
+  $ jupyter notebook Quantitative_analysis.ipynb
+  
+  
+
+Example
 ---------
 
-Some simple examples and benchmarks are available in the `examples
-<https://github.com/pypr/compyle/tree/master/examples>`_ directory.
+To relate to the use of pyDAMPF you can access `Google Colab notebook`_.
 
-You may also run these examples on the `Google Colab notebook`_
