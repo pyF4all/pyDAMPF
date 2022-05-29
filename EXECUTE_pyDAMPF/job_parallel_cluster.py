@@ -47,7 +47,7 @@ from sys import argv
 script, factor = argv
 factor = int(factor)
 
-def cluster (factor);
+def cluster (factor):
 	for i in range(1,factor+1):  #change
 	     with open('jobpyDAMPF'+str(i)+'.x','w') as ssf:
 		     ssf.write('#!/bin/bash -l\n')
