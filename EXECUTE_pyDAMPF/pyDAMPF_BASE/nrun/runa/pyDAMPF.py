@@ -119,12 +119,12 @@ fixzc = cinp[15]*1e-9	#0.35*a0
 #dlvo
 eps= cinp[17]
 eps0= cinp[18]*1e-12	#8.85e-12
-sigmat= cinp[19] 	#0.032
-sigmas= cinp[20]	#0.05
+sigmat= cinp[19]*1e-3	#0.032
+sigmas= cinp[20]*1e-3	#0.05
 debye= cinp[21]*1e-9	#0.48e-9
 #=========================== Saving Sim Inputs ===============================
 #|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-tx00=[ '"res freq 1 (kHz)"', '"drive freq 2 (kHz)"', '"k1 (N/m)"', '"Q1 (adim)"', '"A01 (V)"', '"Tip Radius (nm)"', '"a0 (nm)"', '"Reduced YM (Pa)"', '"Hamaker Const(J)"', '"Viscosity (Pa s)"','"LR Disp. (adim)"', '"Cap Disp.(adim)"', '"LJdepth (nN)"', '"LJlength (nm)"', '"Tip magn (A m2)"', '"Surf magn(A m2)"','"N periods osc"','"N point period"', '"N per to the ss"', '"zc max (nm)"', '"zc min (nm)"', '"delta zc (nm)"', '"zc fixed td(nm)"' ,'"rel perm  (C^2/N m^2)"','"vac perm (C^2/N m^2)"','"t-s density (C/m^2)"','"s char den  (C/m^2)"','"Debye (nm)"']
+tx00=[ '"res freq 1 (kHz)"', '"drive freq 2 (kHz)"', '"k1 (N/m)"', '"Q1 (adim)"', '"A01 (V)"', '"Tip Radius (nm)"', '"a0 (nm)"', '"Reduced YM (Pa)"', '"Hamaker Const(J)"', '"Viscosity (Pa s)"','"LR Disp. (adim)"', '"Cap Disp.(adim)"', '"LJdepth (nN)"', '"LJlength (nm)"', '"Tip magn (A m2)"', '"Surf magn(A m2)"','"N periods osc"','"N point period"', '"N per to the ss"', '"zc max (nm)"', '"zc min (nm)"', '"delta zc (nm)"', '"zc fixed td(nm)"' ,'"rel perm  (mC^2/N m^2)"','"vac perm (mC^2/N m^2)"','"t-s density (C/m^2)"','"s char den  (C/m^2)"','"Debye (nm)"']
 tx00=np.array(tx00)
 tx01=[ omega0a, omegaa, kc, q, a0, rad, a00, ebarra, ham, eta, epsilon1, epsilon2, ljmin, length, mtip, msample, nper, npp, nperfin, zcmax, zcmin, dzc, fixzc ,eps,eps0,sigmat,sigmas,debye]
 tx01=np.array(tx01)
