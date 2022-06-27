@@ -1,4 +1,4 @@
-pyDAMPF: a Python package for modeling mechanical properties of hygroscopic materials under interaction with a nanoprobe
+pyDAMPF: a Python package for modeling mechanical and electrostatic properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
 
 pyDAMPF is a tool oriented to the Atomic Force Microscopy (AFM) community, which allows the simulation of the physical properties of materials under variable relative humidity (RH).
