@@ -1,4 +1,4 @@
-.. figure:: https://github.com/willymenacho/pyDAMPF/blob/master/logo.png
+.. figure:: https://github.com/willymenacho/pyDAMPF/blob/pyDAMPF_INTERFAZ/logo.png
 
 pyDAMPF: a Python package for modeling mechanical and electrostatic properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
