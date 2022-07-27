@@ -181,7 +181,7 @@ MODULE mypmmoda
   !changed tolerance
   IF (abs(l-nzcfix).LE.0.1) THEN
   DO jj=(nper-nperfin)*npp+1,ndin
-  PRINT*,'This condition is working'
+  !PRINT*,'This condition is working'
   WRITE(2,2000) tarray(jj)/periodo,xarray(jj)*1.e9,varray(jj),zc*1.e9,ftarray(jj)*1.e9&
   &,dtarray(jj)*1.e9,vdwtarray(jj)*1.e9,Hertztarray(jj)*1.e9,viscotarray(jj)*1.e9&
   &,captarray(jj)*1.e9,ljtarray(jj)*1.e9,dlvotarray(jj)*1.e9
