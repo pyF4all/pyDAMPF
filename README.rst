@@ -1,4 +1,4 @@
-.. figure:: https://github.com/willymenacho/pyDAMPF/blob/master/logopyDAMPF.png
+.. figure:: https://github.com/willymenacho/pyDAMPF/blob/pyDAMPF_INTERFACE/logo.png
 
 pyDAMPF: a Python package for modeling mechanical and electrostatic properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
@@ -14,12 +14,12 @@ Users can use the existing cantilever database to perform their simulations or a
 - multi-thread (unix based computer)
 - multi-thread (SLURM based computer)
 
-Documentation and learning material is also available in the form of:
+Documentation and learning material are also available in the form of:
 
 
 - An introduction to compyle in the context of writing a parallel molecular
-  dynamics simulator is in our `SciPy 2020 paper
-  <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
+  dynamics simulator is in our `SciPy 2022 paper
+  <https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html>`_.
 
 - You may also try Compyle online for free on a `Google Colab notebook`_.
 
@@ -103,7 +103,7 @@ Parallel method:
 Analysis
 -------------  
   
-Once the pyDAMPF simulation is finished,  pyDAMPF has two ways of analyzing the data.
+Once the pyDAMPF simulation is finished, pyDAMPF has two ways of analyzing the data.
 
 The graphical analysis:
 
@@ -127,4 +127,3 @@ Example
 ---------
 
 To relate to the use of pyDAMPF you can access `Google Colab notebook`_.
-
