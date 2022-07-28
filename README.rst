@@ -34,7 +34,7 @@ Compyle is itself largely pure Python but depends on numpy_, matplotlib_, and pl
 
 You should be able to download pyDAMPF  by doing::
 
-  $ git clone https://github.com/govarguz/pyDAMPF/
+  $ git clone https://github.com/willymenacho/pyDAMPF.git
 
 
 .. _numpy: http://www.numpy.org
@@ -60,7 +60,13 @@ EXECUTE_pyDAMPF, the code for this reads
   
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
   
- 
+Interface
+------------- 
+In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF interface`_.
+
+  $ jupyter notebook interfaz_v1.ipynb
+  
+  
 
 Generate Cases
 -------------
