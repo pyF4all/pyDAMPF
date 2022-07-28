@@ -22,7 +22,6 @@ Documentation and learning material is also available in the form of:
   <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
 
 - You may also try Compyle online for free on a `Google Colab notebook`_.
-
 .. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
 
 - A short tutorial on how to use the `pyDAMPF interface`_.
