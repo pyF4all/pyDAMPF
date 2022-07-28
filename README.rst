@@ -25,6 +25,8 @@ Documentation and learning material is also available in the form of:
 
 .. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
 
+- A short tutorial on how to use the `pyDAMPF interface`_.
+.. _pyDAMPF interface: https://youtu.be/RqBXJc4Augw
 
 Installation
 -------------
@@ -58,6 +60,8 @@ EXECUTE_pyDAMPF, the code for this reads
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
   
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
+  
+ 
 
 Generate Cases
 -------------
