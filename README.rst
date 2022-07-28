@@ -21,7 +21,7 @@ Documentation and learning material is also available in the form of:
   dynamics simulator is in our `SciPy 2020 paper
   <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
 
-- You may also try Compyle online for free on a `Google Colab notebook`_.
+- You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
 - A short tutorial on how to use the `pyDAMPF interface`_.
 .. _pyDAMPF interface: https://youtu.be/RqBXJc4Augw
