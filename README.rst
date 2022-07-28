@@ -19,7 +19,7 @@ Documentation and learning material is also available in the form of:
 
 - An introduction to compyle in the context of writing a parallel molecular
   dynamics simulator is in our `SciPy 2020 paper
-  <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
+  <https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html>`_.
 
 - You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
