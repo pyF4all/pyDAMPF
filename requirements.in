@@ -7,3 +7,4 @@ os
 shutil
 re
 tempfile
+IPython.display
