@@ -30,7 +30,7 @@ Compyle is itself largely pure Python but depends on numpy_, matplotlib_, and pl
 
 You should be able to download pyDAMPF  by doing::
 
-  $ git clone https://github.com/willymenacho/pyDAMPF.git
+    $ git clone https://github.com/willymenacho/pyDAMPF.git
 
 
 .. _numpy: http://www.numpy.org
@@ -41,20 +41,20 @@ You should be able to download pyDAMPF  by doing::
 pyDAMPF has a numerical kernel in fortran so it is necessary to install the correct 
 version.
 
-  $ sudo apt-get update
+    $ sudo apt-get update
   
-  $ sudo apt-get install gfortran-7-multilib
+    $ sudo apt-get install gfortran-7-multilib
 
 
 Compilation with f2py: This step is only required once,and depends on the computer 
 architecture, by using f2py with the file pyDAMPF.f90 within the folder
 EXECUTE_pyDAMPF, the code for this reads
 
-  $ f2py -c --fcompiler=gnu95 pyDAMPF.f90 -m mypyDAMPF
+    $ f2py -c --fcompiler=gnu95 pyDAMPF.f90 -m mypyDAMPF
   
-  $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
+    $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
   
-  $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
+    $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
   
  
 RUN pyDAPMF 
@@ -65,7 +65,7 @@ Interactively from a Jupyter Notebook
 Once you have followed the installation steps, pyDAMPF is ready to run. 
 In our latest version, we have a user friendly interface, you can see a short tutorial in [pyDAMPF (YouTube)](https://youtu.be/RqBXJc4Augw).
 
-  $ jupyter notebook interfaz_v1.ipynb
+    $ jupyter notebook interfaz_v1.ipynb
   
 Also, an interactive server will be soon available through cloud computing now on [Binder](https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb).
 
@@ -78,7 +78,7 @@ Once we have obtained the numerical code as Python modules we generate the
 tempall.txt file which contains all the necessary parameters and variables for 
 the pyDAMPF execution.
 
-  $ python3 inputs_processor.py
+    $ python3 inputs_processor.py
 
 pyDAMPF excecution modes
 -------------------------
@@ -90,7 +90,7 @@ capabilities only.
 Serial method: Our in-house development creates an individual folder for 
 each simulation case,which can be executed in one thread.
 
-  $ python3 serial_method.py
+    $ python3 serial_method.py
   
 Parallel method: 
 
@@ -119,20 +119,19 @@ Once the pyDAMPF simulation is finished, pyDAMPF has two ways of analyzing the d
 
 The graphical analysis:
 
-  $ python3 Graphical_analysis.py
+    $ python3 Graphical_analysis.py
 
 The quantitative analysis:
 
-  $ python3 Quantitative_analysis.py
+    $ python3 Quantitative_analysis.py
   
 Alternatively we offer for both cases an interactive environment in jupyter notebook. 
 
-  $ pip install tabloo
+    $ pip install tabloo
   
-  $ jupyter notebook Graphical_analysis.ipynb
+    $ jupyter notebook Graphical_analysis.ipynb
   
-  $ jupyter notebook Quantitative_analysis.ipynb
-  
+    $ jupyter notebook Quantitative_analysis.ipynb
   
 
 Example
