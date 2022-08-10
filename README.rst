@@ -60,13 +60,20 @@ EXECUTE_pyDAMPF, the code for this reads
   
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
   
-Interface
+ 
+New version
+===============
+  
+RUN pyDAPMF 
 ------------- 
 In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF interface`_.
 
   $ jupyter notebook interfaz_v1.ipynb
   
-  
+
+
+Old version
+==============
 
 Generate Cases
 -------------
