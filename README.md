@@ -1,4 +1,4 @@
-![](https://github.com/willymenacho/pyDAMPF/blob/pyDAMPF_INTERFACE/logo.png "")
+![](logo.png "")
 
 pyDAMPF: a Python package for modeling mechanical and electrostatic properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
