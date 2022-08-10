@@ -19,9 +19,9 @@ Documentation and learning material are also available in the form of:
 
 - An introduction to pyDAMPF in the context of evaluating maximum exerted forces by a cantilever Tip under variable environments is in our [SciPy 2022 paper](https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html).
 
-- You may also try pyDAMPF online for free on a `Google Colab notebook`_.
+- You may also try pyDAMPF online for free on a [Google Colab notebook](https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing).
 
-- A short tutorial on how to use pyDAMPF: [pyDAMPF (YouTube)](https://youtu.be/RqBXJc4Augw) and [Google Colab notebook](https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing)
+- A short tutorial on how to use [pyDAMPF (YouTube)](https://youtu.be/RqBXJc4Augw).
 
 Installation
 -------------
@@ -63,7 +63,7 @@ RUN pyDAPMF
 Interactively from a Jupyter Notebook
 ------------------------------------- 
 Once you have followed the installation steps, pyDAMPF is ready to run. 
-In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF (YouTube)`_.
+In our latest version, we have a user friendly interface, you can see a short tutorial in [pyDAMPF (YouTube)](https://youtu.be/RqBXJc4Augw).
 
   $ jupyter notebook interfaz_v1.ipynb
   
