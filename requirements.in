@@ -8,3 +8,4 @@ shutil
 re
 tempfile
 IPython.display
+HTML
