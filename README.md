@@ -21,9 +21,7 @@ Documentation and learning material are also available in the form of:
 
 - You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
-- A short tutorial on how to use the `pyDAMPF (YouTube)`_.
-.. _pyDAMPF (YouTube): https://youtu.be/RqBXJc4Augw
-.. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
+- A short tutorial on how to use pyDAMPF: [pyDAMPF (YouTube)](https://youtu.be/RqBXJc4Augw) and [Google Colab notebook](https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing)
 
 Installation
 -------------
@@ -69,7 +67,7 @@ In our latest version, we have a user friendly interface, you can see a short tu
 
   $ jupyter notebook interfaz_v1.ipynb
   
-Also, an interactive server will be soon available through cloud computing now on `Binder  <https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb>`_
+Also, an interactive server will be soon available through cloud computing now on [Binder](https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb).
 
 
 
@@ -140,4 +138,4 @@ Alternatively we offer for both cases an interactive environment in jupyter note
 Example
 ---------
 
-To relate to the use of pyDAMPF you can access `Google Colab notebook`_.
+To relate to the use of pyDAMPF you can access [Google Colab notebook](https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing)
