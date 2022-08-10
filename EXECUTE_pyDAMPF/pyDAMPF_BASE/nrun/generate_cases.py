@@ -35,7 +35,11 @@
 #                                  W. Heisenberg
 ############################################################
 #====================================================================
-#
+'''
+######for start timer#####
+import time
+inicio = time.time()
+'''
 # IMPORT MODULES
 import os
 import shutil
@@ -74,8 +78,8 @@ tcases = np.size(iden)
 
 #======================Parallelization=============================
 
-factor=1  # 10  computing threads?
-paraleliz=int(tcases/factor)        #preguntar
+factor=1  
+paraleliz=int(tcases/factor)        
 
 #------------------Case inputs gen--------------------------
 for i in range(0,paraleliz):
@@ -97,4 +101,16 @@ for i in range(0,paraleliz):
     #exec(compile(open("dforcenv1.py").read(), "dforcenv1.py", 'exec'))
     #%run dforcenv1.py
     os.chdir(piat1)
-print("FINALLY! THAT'S ALL!")
+    
+#####for end timer#####
+'''
+fin = time.time()
+print('EXECUTION TIME THREAD '+str(factor)+': ', (fin-inicio)/60 , '[min]') 
+time1 = (fin-inicio)/60
+file = open('timeTHREAD'+str(factor)+'.txt','w')
+file.write('time=%s'%time1)
+file.close()
+'''
+#print('FINISH THREAD  '+str(factor))  
+
+

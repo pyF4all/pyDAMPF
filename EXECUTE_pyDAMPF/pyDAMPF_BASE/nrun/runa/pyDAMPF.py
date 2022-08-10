@@ -135,16 +135,16 @@ for i in np.ndindex(tx00.shape):
 f1.close()
 #    elif: ADD FILE HAS BEEN LOADED IN ADVANCE
 #=========================Call fortran functions ===============================
-print (naux)
+#print (naux)
 mypyDAMPF.mypmmoda.mainbim(naux)
-print ("Runnig f90 module PM")
+#print ("Runnig f90 module PM")
 #=========================Files handling w Python ===============================
 #||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 #palo2="dforcekara"
 #os.mkdir(palo1)
 sid=int(sid*1)
-print ("Sikita michaway Le Chardenal")
+#print ("Sikita michaway Le Chardenal")
 piat2=os.getcwd()
 naind="inputs"+str(sid)+".ini"
 nazcd="zcdom"+str(sid)+".dfo"
@@ -585,7 +585,7 @@ for ii in range(len(opt1)):
 
 #####for end timer#####
 fin = time.time()
-print('EL TIEMPO DE EJECUCION FUE DE ', (fin-inicio)/60 , '[min]') 
+print('EXECUTION TIME CASE '+str(sid)+': ', (fin-inicio)/60 , '[min]') 
 time = (fin-inicio)/60
 file = open('time'+str(sid)+'.txt','w')
 file.write('time=%s'%time)

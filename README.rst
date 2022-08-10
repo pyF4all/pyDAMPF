@@ -1,4 +1,4 @@
-.. figure:: https://github.com/willymenacho/pyDAMPF/blob/master/logopyDAMPF.png
+.. figure:: https://github.com/willymenacho/pyDAMPF/blob/pyDAMPF_INTERFACE/logo.png
 
 pyDAMPF: a Python package for modeling mechanical and electrostatic properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
@@ -19,12 +19,13 @@ Documentation and learning material is also available in the form of:
 
 - An introduction to compyle in the context of writing a parallel molecular
   dynamics simulator is in our `SciPy 2020 paper
-  <http://conference.scipy.org/proceedings/scipy2020/CHANGE_OUR_DIRECTORY>`_.
+  <https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html>`_.
 
-- You may also try Compyle online for free on a `Google Colab notebook`_.
+- You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
+- A short tutorial on how to use the `pyDAMPF interface`_.
+.. _pyDAMPF interface: https://youtu.be/RqBXJc4Augw
 .. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
-
 
 Installation
 -------------
@@ -33,7 +34,7 @@ Compyle is itself largely pure Python but depends on numpy_, matplotlib_, and pl
 
 You should be able to download pyDAMPF  by doing::
 
-  $ git clone https://github.com/govarguz/pyDAMPF/
+  $ git clone https://github.com/willymenacho/pyDAMPF.git
 
 
 .. _numpy: http://www.numpy.org
@@ -58,6 +59,21 @@ EXECUTE_pyDAMPF, the code for this reads
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/
   
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
+  
+ 
+New version
+===============
+  
+RUN pyDAPMF 
+------------- 
+In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF interface`_.
+
+  $ jupyter notebook interfaz_v1.ipynb
+  
+
+
+Old version
+==============
 
 Generate Cases
 -------------
