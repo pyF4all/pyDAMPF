@@ -29,7 +29,11 @@ pip install kaleido
 IN THE TERMINAL:
 
 jupyter notebook interfaz_v1.ipynb
-			         
+			
+			
+YOUTUBE TUTORIAL:
+
+https://youtu.be/RqBXJc4Augw
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 

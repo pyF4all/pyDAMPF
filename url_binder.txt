@@ -1,0 +1,1 @@
+https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb
