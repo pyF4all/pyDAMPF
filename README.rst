@@ -24,7 +24,7 @@ Documentation and learning material is also available in the form of:
 - You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
 - A short tutorial on how to use the `pyDAMPF interface`_.
-.. _pyDAMPF interface: https://youtu.be/RqBXJc4Augw
+.. _pyDAMPF tutorial YouTube: https://youtu.be/RqBXJc4Augw
 .. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
 
 Installation
@@ -67,7 +67,7 @@ New version
 RUN pyDAPMF 
 ------------- 
 Once you have followed the installation steps, pyDAMPF is ready to run. 
-In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF interface`_.
+In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF tutorial YouTube`_.
 
   $ jupyter notebook interfaz_v1.ipynb
   
