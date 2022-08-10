@@ -1,4 +1,7 @@
-![](logo.png "")
+<p align="center">
+  <img src="logo.png" alt=" "/>
+</p>
+
 
 pyDAMPF: a Python package for modeling mechanical and electrostatic properties of hygroscopic materials under interaction with a nanoprobe
 ======================================================
