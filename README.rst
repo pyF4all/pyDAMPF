@@ -23,7 +23,7 @@ Documentation and learning material is also available in the form of:
 
 - You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
-- A short tutorial on how to use the `pyDAMPF interface`_.
+- A short tutorial on how to use the `pyDAMPF (YouTube)`_.
 .. _pyDAMPF (YouTube): https://youtu.be/RqBXJc4Augw
 .. _Google Colab notebook: https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing
 
