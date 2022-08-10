@@ -17,7 +17,7 @@ Users can use the existing cantilever database to perform their simulations or a
 Documentation and learning material are also available in the form of:
 
 
-- An introduction to pyDAMPF in the context of evaluating maximum exerted forces by a cantilever Tip under variable environments is in our `SciPy 2022 paper <https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html>_`.
+- An introduction to pyDAMPF in the context of evaluating maximum exerted forces by a cantilever Tip under variable environments is in our [SciPy 2022 paper](https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html).
 
 - You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
