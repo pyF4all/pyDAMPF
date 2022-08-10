@@ -19,7 +19,7 @@ Documentation and learning material are also available in the form of:
 
 - An introduction to compyle in the context of writing a parallel molecular
   dynamics simulator is in our `SciPy 2022 paper
-  <https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html>`_.
+  <https://conference.scipy.org/proceedings/scipy2022/pyDAMPF_HVGuzman.html .
 
 - You may also try pyDAMPF online for free on a `Google Colab notebook`_.
 
@@ -71,7 +71,7 @@ In our latest version, we have a user friendly interface, you can see a short tu
 
   $ jupyter notebook interfaz_v1.ipynb
   
-Also, an interactive server will be soon available through cloud computing .. _Binder : https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb
+Also, an interactive server will be soon available through cloud computing now on `Binder  <https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb>`_
 
 
 
