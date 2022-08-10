@@ -66,6 +66,7 @@ New version
   
 RUN pyDAPMF 
 ------------- 
+Once you have followed the installation steps, pyDAMPF is ready to run. 
 In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF interface`_.
 
   $ jupyter notebook interfaz_v1.ipynb
