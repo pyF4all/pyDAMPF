@@ -61,23 +61,22 @@ EXECUTE_pyDAMPF, the code for this reads
   $ cp *.so ~/pyDAMPF/EXECUTE_pyDAMPF/pyDAMPF_BASE/nrun/runa
   
  
-New version
+RUN pyDAPMF 
 ===============
   
-RUN pyDAPMF 
-------------- 
+Interactively from a Jupyter Notebook
+------------------------------------- 
 Once you have followed the installation steps, pyDAMPF is ready to run. 
 In our latest version, we have a user friendly interface, you can see a short tutorial in `pyDAMPF (YouTube)`_.
 
   $ jupyter notebook interfaz_v1.ipynb
   
+Also, an interactive server will be soon available through cloud computing .. _Binder : https://mybinder.org/v2/gh/willymenacho/pyDAMPF/e3953d64629f9d56ec8415ade16f654e543a5109?urlpath=lab%2Ftree%2Finterfaz_v1.ipynb
 
 
-Old version
-==============
 
-Generate Cases
--------------
+Local excecution with python 
+-----------------------------
 
 Once we have obtained the numerical code as Python modules we generate the 
 tempall.txt file which contains all the necessary parameters and variables for 
@@ -85,8 +84,8 @@ the pyDAMPF execution.
 
   $ python3 inputs_processor.py
 
-Execute pyDAMPF
--------------
+pyDAMPF excecution modes
+-------------------------
 
 We need to choose the execution mode which can be serial or parallel. 
 Whereby parallel refers within this first version of the code to multi-threading
