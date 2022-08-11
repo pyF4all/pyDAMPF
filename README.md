@@ -29,7 +29,7 @@ Documentation and learning material are also available in the form of:
 Installation
 -------------
 
-Compyle is itself largely pure Python but depends on [numpy](http://www.numpy.org), [matplotlib](https://matplotlib.org), and [plotly](https://plotly.com)
+pyDAMPF is itself largely Python and Fortran but depends on [numpy](http://www.numpy.org), [matplotlib](https://matplotlib.org), and [scipy](https://www.scipy.org)
 
 You should be able to download pyDAMPF  by doing::
 
