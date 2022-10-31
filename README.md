@@ -24,7 +24,9 @@ Documentation and learning material are also available in the form of:
 
 - You may also try pyDAMPF online for free on a [Google Colab notebook](https://colab.research.google.com/drive/1ZM_aQsuYWUD2gnhcIhngpypJ6m1MbFxE?usp=sharing).
 
-- A short tutorial on how to use [pyDAMPF (YouTube)](https://youtu.be/RqBXJc4Augw).
+- A short tutorial on how to use [pyDAMPF desktop version (YouTube)](https://youtu.be/RqBXJc4Augw).
+
+- A short tutorial on how to use [pyDAMPF online version (YouTube)](https://youtu.be/6mILVtd-sa4).
 
 Installation
 -------------
